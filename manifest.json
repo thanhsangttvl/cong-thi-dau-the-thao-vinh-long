@@ -1,0 +1,17 @@
+
+{
+  "name": "Cổng Thi Đấu Thể Thao Vĩnh Long",
+  "short_name": "Thi Đấu Vĩnh Long",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#008f43",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
