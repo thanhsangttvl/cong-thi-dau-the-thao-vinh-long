@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b70">
+  <title>Cổng Thi Đấu Thể Thao Vĩnh Long</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eaf3ff, #f8fbff);
+      color: #17345c;
+    }
+    .card {
+      width: 100%;
+      max-width: 480px;
+      padding: 32px 24px;
+      text-align: center;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px #17345c1a;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: #eaf3ff;
+      font-size: 58px;
+    }
+    h1 { font-size: 25px; margin: 10px 0; }
+    p { color: #53657d; line-height: 1.6; }
+    .enter {
+      display: block;
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #174a8b;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+    }
+    .enter:hover { background: #103766; }
+    .note { margin-top: 20px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo" aria-label="Biểu tượng thể thao">🏆</div>
+    <h1>CỔNG THI ĐẤU THỂ THAO</h1>
+    <p><strong>VĨNH LONG</strong></p>
+    <p>Hệ thống quản lý thi đấu, kết quả và tổng sắp huy chương.</p>
+
+    <a class="enter" id="enterButton" href="#">
+      VÀO HỆ THỐNG
+    </a>
+
+    <p class="note" id="message">
+      Cổng truy cập chính thức của hệ thống thi đấu thể thao.
+    </p>
+  </main>
+
+  <script>
+    // Sẽ thay bằng đường dẫn Web App Apps Script của bạn.
+    const APP_URL = "DAN_LINK_APPS_SCRIPT_VAO_DAY";
+
+    const button = document.getElementById("enterButton");
+    const message = document.getElementById("message");
+
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      if (!APP_URL.startsWith("https://script.google.com/")) {
+        message.textContent =
+          "Chưa thiết lập đường dẫn hệ thống. Vui lòng hoàn tất cấu hình.";
+        return;
+      }
+
+      window.location.href = APP_URL;
+    });
+  </script>
+</body>
+</html>
