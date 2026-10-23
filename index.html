@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cổng Thi Đấu Thể Thao Vĩnh Long | TTVL</title>
+  <title>Cổng Thi Đấu Thể Thao Vĩnh Long - TTVL</title>
   <meta name="description" content="Cổng hệ thống quản lý thi đấu thể thao, kết quả và tổng sắp huy chương Vĩnh Long.">
   <meta name="theme-color" content="#078b43">
 
-  <!-- Đổi ?v=3 để trình duyệt tải lại logo mới -->
-  <link rel="icon" type="image/png" href="./icon.png?v=3">
-  <link rel="shortcut icon" type="image/png" href="./icon.png?v=3">
-  <link rel="apple-touch-icon" href="./icon.png?v=3">
-  <link rel="manifest" href="./manifest.json">
+  <!-- ICON TTVL MỚI -->
+  <link rel="icon" type="image/png" href="./icon.png?v=5">
+  <link rel="shortcut icon" type="image/png" href="./icon.png?v=5">
+  <link rel="apple-touch-icon" href="./icon.png?v=5">
 
   <style>
     * {
@@ -23,15 +22,20 @@
     :root {
       --green: #078b43;
       --dark-green: #05652f;
-      --text: #173b2a;
-      --muted: #617568;
+      --text: #153b29;
+      --muted: #647568;
+    }
+
+    html {
+      min-height: 100%;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
       min-height: 100dvh;
-      padding: 20px;
+      padding: 24px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,29 +43,34 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(ellipse at top left, #dcf7e9, transparent 55%),
-        linear-gradient(135deg, #f5fcf7, #edf7fb);
+        radial-gradient(
+          ellipse at top left,
+          rgba(150, 232, 190, 0.28),
+          transparent 55%
+        ),
+        linear-gradient(135deg, #f1fbf5, #f5fafc);
     }
 
     .card {
       width: 100%;
       max-width: 540px;
-      padding: 30px 24px 28px;
+      padding: 30px 26px 28px;
       text-align: center;
       background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #d8eee0;
+      border: 1px solid #d9eee0;
       border-radius: 28px;
       box-shadow: 0 16px 45px rgba(17, 91, 48, 0.10);
     }
 
+    /* Logo tròn: không thêm khung vuông quanh ảnh */
     .logo {
       display: block;
-      width: min(64vw, 250px);
-      height: min(64vw, 250px);
+      width: min(65vw, 250px);
+      height: min(65vw, 250px);
       object-fit: contain;
       margin: 0 auto 22px;
       border: 0;
-      border-radius: 0;
+      border-radius: 50%;
       background: transparent;
     }
 
@@ -71,7 +80,7 @@
       font-size: clamp(23px, 5vw, 30px);
       line-height: 1.25;
       font-weight: 800;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
     }
 
     .province {
@@ -83,11 +92,11 @@
     }
 
     .description {
-      margin: 0 auto;
       max-width: 440px;
+      margin: 0 auto;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .enter {
@@ -102,11 +111,12 @@
       border-radius: 14px;
       background: linear-gradient(135deg, #07984b, #067338);
       box-shadow: 0 7px 18px rgba(7, 139, 67, 0.22);
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-size: 17px;
       font-weight: 800;
-      transition: transform .2s, box-shadow .2s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .enter:hover {
@@ -114,9 +124,18 @@
       box-shadow: 0 10px 24px rgba(7, 139, 67, 0.28);
     }
 
+    .enter:active {
+      transform: scale(0.99);
+    }
+
     .enter:focus-visible {
       outline: 3px solid #f5c542;
       outline-offset: 4px;
+    }
+
+    .enter-icon,
+    .arrow {
+      font-size: 21px;
     }
 
     .note {
@@ -136,8 +155,8 @@
 
     .feature {
       padding: 8px 11px;
-      border-radius: 999px;
       border: 1px solid #dcece1;
+      border-radius: 999px;
       background: #f7fcf8;
       color: #35634a;
       font-size: 12px;
@@ -175,10 +194,16 @@
       .enter {
         font-size: 16px;
       }
+
+      .features {
+        gap: 7px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         transition: none !important;
       }
     }
@@ -187,27 +212,33 @@
 
 <body>
   <main class="card">
+
+    <!-- Logo TTVL có cúp vàng -->
     <img
       class="logo"
-      src="./icon.png?v=3"
+      src="./icon.png?v=5"
       alt="Logo TTVL - Cổng Thi Đấu Thể Thao Vĩnh Long"
+      width="250"
+      height="250"
       fetchpriority="high"
     >
 
     <h1 class="brand">CỔNG THI ĐẤU THỂ THAO</h1>
+
     <p class="province">VĨNH LONG</p>
 
     <p class="description">
       Hệ thống quản lý thi đấu, kết quả và tổng sắp huy chương.
     </p>
 
+    <!-- Giữ nguyên địa chỉ Apps Script -->
     <a
       class="enter"
       href="https://script.google.com/macros/s/AKfycbxvS-CG-mv2qfXzWCumH6k1cb6UhoPMoNzsmKg_-7mPVz1UsIFKo9mOZxYiy-fHlFGbsQ/exec"
     >
-      <span aria-hidden="true">🏆</span>
+      <span class="enter-icon" aria-hidden="true">🏆</span>
       <span>VÀO HỆ THỐNG</span>
-      <span aria-hidden="true">→</span>
+      <span class="arrow" aria-hidden="true">→</span>
     </a>
 
     <p class="note">
@@ -220,6 +251,7 @@
       <span class="feature">📋 Kết quả thi đấu</span>
       <span class="feature">🥇 Tổng sắp huy chương</span>
     </div>
+
   </main>
 
   <footer>
