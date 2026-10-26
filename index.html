@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Cổng Thể Dục Thể Thao Vĩnh Long</title>
-  <meta name="description" content="Cổng quản lý thi đấu thể thao, kết quả và tổng sắp huy chương Vĩnh Long.">
+  <meta name="description" content="Cổng quản lý thi đấu thể thao, kết quả và tổng sắp huy chương tỉnh Vĩnh Long.">
   <meta name="theme-color" content="#07833e">
 
-  <!-- ICON TRÊN TRÌNH DUYỆT -->
+  <!-- ICON TRÊN TAB TRÌNH DUYỆT -->
   <link rel="icon" type="image/png" href="./logo.png?v=20261026">
   <link rel="apple-touch-icon" href="./logo.png?v=20261026">
 
@@ -18,32 +18,51 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --green: #07833e;
+      --green-dark: #05632f;
+      --red: #e31837;
+      --text: #173b2a;
+      --muted: #627568;
+    }
+
+    html {
+      min-height: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       min-height: 100dvh;
-      padding: 24px 16px;
+      padding: 22px 14px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       font-family: Arial, Helvetica, sans-serif;
-      color: #173b2a;
-      background: linear-gradient(145deg, #e8f8ef, #f7fbfd);
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(255, 255, 255, 0.95),
+          transparent 70%
+        ),
+        linear-gradient(145deg, #e4f7ed, #f2fbf7);
     }
 
     .card {
       width: 100%;
       max-width: 520px;
-      padding: 30px 26px 26px;
+      padding: 28px 26px 26px;
       text-align: center;
-      background: #fff;
-      border: 1px solid #d5eadc;
-      border-radius: 26px;
-      box-shadow: 0 12px 36px rgba(0, 90, 40, 0.10);
+      background: #ffffff;
+      border: 1px solid #d1e9da;
+      border-radius: 27px;
+      box-shadow: 0 12px 38px rgba(0, 90, 40, 0.10);
     }
 
-    /* Khu vực logo nhỏ gọn, không để khoảng trắng quá lớn */
+    /* VÙNG LOGO TRÒN */
     .logo-wrap {
       width: min(62vw, 230px);
       height: min(62vw, 230px);
@@ -51,6 +70,9 @@
       overflow: hidden;
       border-radius: 50%;
       background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo {
@@ -61,28 +83,49 @@
       object-position: center;
       border: 0;
       border-radius: 50%;
+      background: transparent;
+    }
+
+    .logo-error {
+      display: none;
+      width: 100%;
+      height: 100%;
+      border: 2px dashed #d6e8dc;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--green);
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .logo-error .cup {
+      font-size: 48px;
     }
 
     h1 {
       margin: 0;
-      color: #08783c;
-      font-size: clamp(21px, 5vw, 28px);
+      color: var(--green-dark);
+      font-size: clamp(22px, 5vw, 29px);
       font-weight: 900;
       line-height: 1.35;
     }
 
     .province {
       margin: 10px 0 18px;
-      color: #d71935;
+      color: var(--red);
       font-size: clamp(20px, 5vw, 24px);
       font-weight: 900;
       letter-spacing: 3px;
     }
 
     .description {
-      margin: 0 auto;
       max-width: 420px;
-      color: #627568;
+      margin: 0 auto;
+      color: var(--muted);
       font-size: 15px;
       line-height: 1.8;
     }
@@ -97,20 +140,36 @@
       margin: 26px auto 18px;
       padding: 15px 12px;
       border-radius: 14px;
-      background: linear-gradient(135deg, #07984b, #006b35);
+      background: linear-gradient(135deg, #07994b, #006b35);
       box-shadow: 0 7px 18px rgba(7, 131, 62, 0.22);
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       font-size: 16px;
       font-weight: 800;
+      transition: transform 0.2s, box-shadow 0.2s;
       -webkit-tap-highlight-color: transparent;
     }
 
     .enter-button:hover {
-      filter: brightness(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(7, 131, 62, 0.28);
     }
 
-    .note {
+    .enter-button:active {
+      transform: scale(0.99);
+    }
+
+    .enter-button:focus-visible {
+      outline: 3px solid #f5c542;
+      outline-offset: 4px;
+    }
+
+    .button-icon {
+      font-size: 21px;
+      flex-shrink: 0;
+    }
+
+    .description-note {
       margin: 0;
       color: #748176;
       font-size: 12px;
@@ -136,10 +195,11 @@
     }
 
     footer {
-      padding-top: 18px;
-      text-align: center;
+      padding: 17px 8px 0;
       color: #748176;
       font-size: 11px;
+      line-height: 1.6;
+      text-align: center;
     }
 
     @media (max-width: 480px) {
@@ -148,8 +208,8 @@
       }
 
       .card {
-        padding: 24px 18px;
-        border-radius: 22px;
+        padding: 24px 18px 22px;
+        border-radius: 23px;
       }
 
       .logo-wrap {
@@ -161,6 +221,23 @@
       .enter-button {
         font-size: 14px;
       }
+
+      .features {
+        gap: 7px;
+      }
+
+      .feature {
+        font-size: 11px;
+        padding: 8px 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -168,18 +245,28 @@
 <body>
   <main class="card">
 
+    <!-- LOGO: THỬ logo.png, NẾU KHÔNG CÓ THÌ THỬ icon.png -->
     <div class="logo-wrap">
       <img
+        id="siteLogo"
         class="logo"
         src="./logo.png?v=20261026"
         alt="Logo Thể dục Thể thao Vĩnh Long"
         width="230"
         height="230"
-        onerror="this.parentElement.style.display='none';"
+        fetchpriority="high"
       >
+
+      <div id="logoError" class="logo-error">
+        <span class="cup">🏆</span>
+        <strong>THỂ DỤC THỂ THAO</strong>
+        <span>VĨNH LONG · 2026</span>
+        <span>Vui lòng kiểm tra file logo.png hoặc icon.png trên GitHub.</span>
+      </div>
     </div>
 
     <h1>THỂ DỤC THỂ THAO</h1>
+
     <p class="province">VĨNH LONG · 2026</p>
 
     <p class="description">
@@ -187,16 +274,17 @@
       và tổng sắp huy chương thể thao tỉnh Vĩnh Long.
     </p>
 
+    <!-- ĐƯỜNG DẪN HỆ THỐNG APPS SCRIPT -->
     <a
       class="enter-button"
       href="https://script.google.com/macros/s/AKfycbxvS-CG-mv2qfXzWCumH6k1cb6UhoPMoNzsmKg_-7mPVz1UsIFKo9mOZxYiy-fHlFGbsQ/exec"
     >
-      <span aria-hidden="true">🏆</span>
+      <span class="button-icon" aria-hidden="true">🏆</span>
       <span>VÀO HỆ THỐNG THI ĐẤU</span>
       <span aria-hidden="true">→</span>
     </a>
 
-    <p class="note">
+    <p class="description-note">
       Vui lòng kết nối Internet để sử dụng hệ thống.
     </p>
 
@@ -211,5 +299,31 @@
   <footer>
     © 2026 · Thể Dục Thể Thao Vĩnh Long
   </footer>
+
+  <script>
+    (function () {
+      const logo = document.getElementById("siteLogo");
+      const errorBox = document.getElementById("logoError");
+
+      // Nếu logo.png không tải được, thử icon.png.
+      logo.addEventListener("error", function () {
+        if (logo.dataset.triedIcon !== "yes") {
+          logo.dataset.triedIcon = "yes";
+          logo.src = "./icon.png?v=20261026";
+          return;
+        }
+
+        // Chỉ hiện thông báo khi cả hai file đều không tải được.
+        logo.style.display = "none";
+        errorBox.style.display = "flex";
+      });
+
+      // Tránh vòng lặp khi trình duyệt không tải được ảnh.
+      logo.addEventListener("load", function () {
+        logo.style.display = "block";
+        errorBox.style.display = "none";
+      });
+    })();
+  </script>
 </body>
 </html>
