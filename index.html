@@ -5,31 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Cổng Thi Đấu Thể Thao Vĩnh Long 2026</title>
-  <meta name="description" content="Cổng quản lý thi đấu, kết quả và tổng sắp huy chương Đại hội Thể dục Thể thao tỉnh Vĩnh Long năm 2026.">
-  <meta name="theme-color" content="#087b3d">
+  <title>Cổng Thể Dục Thể Thao Vĩnh Long</title>
+  <meta name="description" content="Cổng quản lý thi đấu thể thao, kết quả và tổng sắp huy chương Vĩnh Long.">
+  <meta name="theme-color" content="#07833e">
 
-  <!-- LOGO ĐẠI HỘI 2026 -->
-  <link rel="icon" type="image/png" href="./logo.png?v=2026">
-  <link rel="shortcut icon" type="image/png" href="./logo.png?v=2026">
-  <link rel="apple-touch-icon" href="./logo.png?v=2026">
+  <!-- ICON TRÊN TRÌNH DUYỆT -->
+  <link rel="icon" type="image/png" href="./logo.png?v=20261026">
+  <link rel="apple-touch-icon" href="./logo.png?v=20261026">
 
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    :root {
-      --green: #07833e;
-      --green-dark: #045c2d;
-      --red: #d71935;
-      --text: #173b2a;
-      --muted: #627568;
-    }
-
-    html {
-      min-height: 100%;
-      -webkit-text-size-adjust: 100%;
     }
 
     body {
@@ -38,18 +24,12 @@
       min-height: 100dvh;
       padding: 24px 16px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(
-          circle at 50% 20%,
-          rgba(255, 255, 255, 0.98) 0%,
-          rgba(235, 249, 240, 0.96) 50%,
-          rgba(213, 240, 222, 0.95) 100%
-        );
+      color: #173b2a;
+      background: linear-gradient(145deg, #e8f8ef, #f7fbfd);
     }
 
     .card {
@@ -57,46 +37,44 @@
       max-width: 520px;
       padding: 30px 26px 26px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #d7eadc;
+      background: #fff;
+      border: 1px solid #d5eadc;
       border-radius: 26px;
-      box-shadow: 0 14px 40px rgba(0, 90, 40, 0.10);
+      box-shadow: 0 12px 36px rgba(0, 90, 40, 0.10);
     }
 
-    /* Logo tròn, không tạo khung vuông quanh ảnh */
+    /* Khu vực logo nhỏ gọn, không để khoảng trắng quá lớn */
     .logo-wrap {
-      width: min(68vw, 270px);
-      aspect-ratio: 1 / 1;
+      width: min(62vw, 230px);
+      height: min(62vw, 230px);
       margin: 0 auto 22px;
       overflow: hidden;
       border-radius: 50%;
       background: transparent;
-      line-height: 0;
     }
 
     .logo {
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       border: 0;
       border-radius: 50%;
-      background: transparent;
     }
 
     h1 {
       margin: 0;
-      color: var(--green-dark);
-      font-size: clamp(22px, 5vw, 29px);
+      color: #08783c;
+      font-size: clamp(21px, 5vw, 28px);
       font-weight: 900;
       line-height: 1.35;
     }
 
-    .year {
+    .province {
       margin: 10px 0 18px;
-      color: var(--red);
-      font-size: 24px;
+      color: #d71935;
+      font-size: clamp(20px, 5vw, 24px);
       font-weight: 900;
       letter-spacing: 3px;
     }
@@ -104,7 +82,7 @@
     .description {
       margin: 0 auto;
       max-width: 420px;
-      color: var(--muted);
+      color: #627568;
       font-size: 15px;
       line-height: 1.8;
     }
@@ -113,44 +91,36 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
+      gap: 10px;
       width: 100%;
       min-height: 56px;
-      margin: 27px auto 18px;
-      padding: 15px 18px;
+      margin: 26px auto 18px;
+      padding: 15px 12px;
       border-radius: 14px;
-      background: linear-gradient(135deg, #07974a, #066a32);
-      box-shadow: 0 7px 18px rgba(7, 131, 62, 0.23);
-      color: #fff;
+      background: linear-gradient(135deg, #07984b, #006b35);
+      box-shadow: 0 7px 18px rgba(7, 131, 62, 0.22);
+      color: white;
       text-decoration: none;
       font-size: 16px;
       font-weight: 800;
-      transition: transform 0.2s, box-shadow 0.2s;
       -webkit-tap-highlight-color: transparent;
     }
 
     .enter-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(7, 131, 62, 0.30);
+      filter: brightness(1.05);
     }
 
-    .enter-button:active {
-      transform: scale(0.99);
-    }
-
-    .enter-button:focus-visible {
-      outline: 3px solid #f5c542;
-      outline-offset: 4px;
-    }
-
-    .button-icon {
-      font-size: 21px;
+    .note {
+      margin: 0;
+      color: #748176;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .features {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 8px;
       margin-top: 20px;
     }
@@ -165,19 +135,11 @@
       font-weight: 700;
     }
 
-    .note {
-      margin: 0;
-      color: #748176;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
     footer {
-      padding: 18px 8px 0;
+      padding-top: 18px;
+      text-align: center;
       color: #748176;
       font-size: 11px;
-      line-height: 1.6;
-      text-align: center;
     }
 
     @media (max-width: 480px) {
@@ -186,29 +148,18 @@
       }
 
       .card {
-        padding: 25px 19px 22px;
-        border-radius: 23px;
+        padding: 24px 18px;
+        border-radius: 22px;
       }
 
       .logo-wrap {
-        width: min(66vw, 235px);
-        margin-bottom: 19px;
-      }
-
-      .year {
-        font-size: 22px;
+        width: min(58vw, 205px);
+        height: min(58vw, 205px);
+        margin-bottom: 20px;
       }
 
       .enter-button {
-        font-size: 15px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
+        font-size: 14px;
       }
     }
   </style>
@@ -220,29 +171,27 @@
     <div class="logo-wrap">
       <img
         class="logo"
-        src="./logo.png?v=2026"
-        alt="Logo Đại hội Thể dục Thể thao tỉnh Vĩnh Long năm 2026"
-        width="270"
-        height="270"
-        fetchpriority="high"
+        src="./logo.png?v=20261026"
+        alt="Logo Thể dục Thể thao Vĩnh Long"
+        width="230"
+        height="230"
+        onerror="this.parentElement.style.display='none';"
       >
     </div>
 
-    <h1>ĐẠI HỘI THỂ DỤC THỂ THAO</h1>
-
-    <p class="year">VĨNH LONG · 2026</p>
+    <h1>THỂ DỤC THỂ THAO</h1>
+    <p class="province">VĨNH LONG · 2026</p>
 
     <p class="description">
       Cổng thông tin quản lý thi đấu, cập nhật kết quả
-      và tổng sắp huy chương Đại hội Thể dục Thể thao tỉnh Vĩnh Long.
+      và tổng sắp huy chương thể thao tỉnh Vĩnh Long.
     </p>
 
-    <!-- ĐƯỜNG DẪN HỆ THỐNG APPS SCRIPT -->
     <a
       class="enter-button"
       href="https://script.google.com/macros/s/AKfycbxvS-CG-mv2qfXzWCumH6k1cb6UhoPMoNzsmKg_-7mPVz1UsIFKo9mOZxYiy-fHlFGbsQ/exec"
     >
-      <span class="button-icon" aria-hidden="true">🏆</span>
+      <span aria-hidden="true">🏆</span>
       <span>VÀO HỆ THỐNG THI ĐẤU</span>
       <span aria-hidden="true">→</span>
     </a>
@@ -252,7 +201,7 @@
     </p>
 
     <div class="features">
-      <span class="feature">🏃 Nội dung thi đấu</span>
+      <span class="feature">🏃 Thi đấu</span>
       <span class="feature">📋 Kết quả</span>
       <span class="feature">🥇 Huy chương</span>
     </div>
@@ -260,7 +209,7 @@
   </main>
 
   <footer>
-    © 2026 · Đại hội Thể dục Thể thao tỉnh Vĩnh Long
+    © 2026 · Thể Dục Thể Thao Vĩnh Long
   </footer>
 </body>
 </html>
