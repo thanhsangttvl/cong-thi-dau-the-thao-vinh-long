@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,9 +7,8 @@
 
   <title>Cổng Thi Đấu Thể Thao Vĩnh Long 2026</title>
 
-  <!-- Mô tả chính của trang -->
   <meta name="description"
-        content="Cổng thông tin Thể dục Thể thao Vĩnh Long năm 2026. Tra cứu nội dung thi đấu, kết quả và tổng sắp huy chương.">
+        content="Hệ thống thông tin thi đấu thể thao tỉnh Vĩnh Long năm 2026.">
 
   <meta name="theme-color" content="#087b40">
   <meta name="robots" content="index, follow">
@@ -21,7 +20,7 @@
   <meta property="og:title"
         content="Cổng Thi Đấu Thể Thao Vĩnh Long 2026">
   <meta property="og:description"
-        content="Cổng thông tin Thể dục Thể thao Vĩnh Long năm 2026. Tra cứu nội dung thi đấu, kết quả và tổng sắp huy chương.">
+        content="Hệ thống thông tin thi đấu thể thao tỉnh Vĩnh Long năm 2026.">
   <meta property="og:url"
         content="https://thanhsangttvl.github.io/cong-thi-dau-the-thao-vinh-long/">
   <meta property="og:image"
@@ -32,7 +31,7 @@
   <meta name="twitter:title"
         content="Cổng Thi Đấu Thể Thao Vĩnh Long 2026">
   <meta name="twitter:description"
-        content="Cổng thông tin Thể dục Thể thao Vĩnh Long năm 2026. Tra cứu nội dung thi đấu, kết quả và tổng sắp huy chương.">
+        content="Hệ thống thông tin thi đấu thể thao tỉnh Vĩnh Long năm 2026.">
   <meta name="twitter:image"
         content="https://thanhsangttvl.github.io/cong-thi-dau-the-thao-vinh-long/logo.png">
 
@@ -175,6 +174,7 @@
       line-height: 1.8;
     }
 
+    /* 11 tiêu đề chỉ hiển thị, không có liên kết */
     .features {
       display: flex;
       justify-content: center;
@@ -184,13 +184,21 @@
     }
 
     .feature {
-      padding: 9px 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
       border: 1px solid #dcefe2;
       border-radius: 30px;
       background: #f7fcf8;
       color: #315d42;
       font-size: 13px;
       font-weight: bold;
+      line-height: 1.5;
+      text-align: center;
+      cursor: default;
+      user-select: none;
     }
 
     .enter-button {
@@ -226,6 +234,8 @@
       margin: 15px 0 0;
       color: #718477;
       font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
       line-height: 1.7;
     }
 
@@ -270,7 +280,7 @@
       }
 
       .feature {
-        padding: 8px 10px;
+        padding: 9px 12px;
         font-size: 12px;
       }
 
@@ -300,6 +310,7 @@
           id="portal-logo"
           src="./logo.png"
           alt="Biểu trưng Thể dục Thể thao Vĩnh Long"
+          onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
         >
 
         <div class="logo-fallback" id="logo-fallback" aria-hidden="true">
@@ -320,16 +331,23 @@
       <div class="year-heading">2026</div>
 
       <p class="description">
-        Hệ thống thông tin thi đấu thể thao tỉnh Vĩnh Long.
-        Truy cập để theo dõi nội dung thi đấu, cập nhật kết quả
-        và tra cứu tổng sắp huy chương.
+        Hệ thống thông tin thi đấu thể thao tỉnh Vĩnh Long
       </p>
 
-      <div class="features">
+      <!-- 11 tiêu đề: không liên kết, không chuyển trang -->
+      <nav class="features" aria-label="Danh mục chức năng thi đấu">
+        <span class="feature">📖 Điều lệ</span>
+        <span class="feature">📝 Đăng ký</span>
+        <span class="feature">🔎 Kiểm tra</span>
         <span class="feature">🏃 Nội dung thi đấu</span>
+        <span class="feature">🎲 Bốc thăm</span>
+        <span class="feature">🗓️ Xếp lịch</span>
+        <span class="feature">📺 Theo dõi trận đấu</span>
+        <span class="feature">📊 Theo dõi kết quả</span>
         <span class="feature">📋 Kết quả thi đấu</span>
-        <span class="feature">🏅 Tổng sắp huy chương</span>
-      </div>
+        <span class="feature">🏅 Tổng sắp huy chương từng môn</span>
+        <span class="feature">🏆 Xếp hạng toàn đoàn</span>
+      </nav>
 
       <a
         class="enter-button"
@@ -342,4 +360,14 @@
       </a>
 
       <p class="note">
-        Nhấn nút phía trên để vào hệ thống
+        TRUY CẬP HỆ THỐNG
+      </p>
+
+    </section>
+  </main>
+
+  <footer>
+    <strong>THỂ DỤC THỂ THAO VĨNH LONG · 2026</strong>
+  </footer>
+</body>
+</html>
